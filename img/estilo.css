@@ -7,6 +7,14 @@
     --glass: rgba(255,255,255,.08);
     --glass-border: rgba(255,255,255,.35);
 }
+*{
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
+    scrollbar-width: thin;
+    scrollbar-color: var(--glass-border) transparent;
+}
 body{
   margin:0;
   font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -28,18 +36,17 @@ body{
   position:absolute; 
   top:0; left:0; right:0; bottom:0; /* ocupa toda a tela */
   
-  background: url("https://i.pinimg.com/736x/60/9e/a7/609ea75dd629c6b20cad8852a1bd4f18.jpg")
+  background: url("https://i.pinimg.com/1200x/3e/6e/1e/3e6e1e2eca9072bc7de42b110712c628.jpg")
               center center / cover no-repeat;
   z-index:-2;
 }
 
-subtitulo{
-    margin: 15vh 0 0 0;
+.subtitulo{
     font-size: clamp(16px, 2.2vw, 22px);
     font-weight: 400;
     color: var(--fg);
     opacity: .85;
-    
+    text-shadow: #3a3131 1px 1px 2px, #020000 0 0 1em, #020000 0 0 0.2em;
 }
 
 h1{
@@ -51,6 +58,7 @@ h1{
     color: whitesmoke;
     text-align: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    text-shadow: #020000 1px 1px 2px, #020000 0 0 1em, #020000 0 0 0.2em;
 }
 
 .topbar{
@@ -103,22 +111,25 @@ h1{
 }
 .hamburger span:nth-child(2){
     margin:5px 0; 
+    
 }
 
 .botao{
      display:inline-block;
-  padding: 12px 24px;
-  border-radius: 999px;
-  color: var(--fg);
-  text-decoration: none;
-  font-weight: 600;
-  letter-spacing:.04em;
-  border: 1px solid var(--glass-border);
-  background: linear-gradient(180deg, rgba(255,255,255,.16), rgba(255,255,255,.04));
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  box-shadow: 0 6px 24px rgba(0,0,0,.35);
-  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
-    margin-top: 32px;
+    padding: 12px 24px;
+    border-radius: 999px;
+    color: var(--fg);
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing:.04em;
+    border: 1px solid var(--glass-border);/* borda do botão */
+    background: var(--glass);/* fundo do botão */
+    background: linear-gradient(180deg, rgba(255,255,255,.16), rgba(255,255,255,.04));/* efeito de vidro fosco */
+    backdrop-filter: blur(8px);/* efeito de vidro fosco */
+    -webkit-backdrop-filter: blur(8px);/* efeito de vidro fosco */
+    transform: translateY(0);/* posição inicial */
+    box-shadow: 0 6px 24px rgba(0,0,0,.35);/* sombra sutil */
+    transition: transform .2s ease, box-shadow .2s ease, background .2s ease;/* transição suave para hover */
+    margin-top: 32px;/* espaçamento do botão para o título */
     
 }
